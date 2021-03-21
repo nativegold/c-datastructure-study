@@ -7,7 +7,7 @@ int main() {
 	int operation;
 	account *acc;	
 	
-	acc = (account*)malloc(sizeof(account));	// 계좌 동적으로 생성
+	acc = (account*)malloc(sizeof(account));	// 메모리 동적 할당
 	strcpy(acc->id, "012345679");	// 계좌번호 임의로 설정
 	
 	while(TRUE) {
@@ -15,6 +15,8 @@ int main() {
 		if(operation == END)		// 작동 끝내기
 			break;
 	}
+	
+	free(acc);	// 메모리 해제
 	
 	return 0;
 }
